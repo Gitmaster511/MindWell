@@ -1,0 +1,10 @@
+Total number of messages: 223
+Emotion counts across all channels: {'love': 5, 'curious': 45, 'grumpy': 5, 'fear': 1, 'joy': 19, 'neutral': 64, 'confuse': 22, 'sadness': 6, 'suspicious': 4, 'cheeky': 22, 'think': 4, 'anger': 3, 'whiny': 2, 'surprise': 14, 'empathetic': 4, 'serious': 2, 'impatient': 1}
+Most frequent emotion across all channels: neutral
+Most frequent emotion in each channel:
+Channel 'general': neutral
+Channel 'clips-and-highlights': None
+Channel 'memes': neutral
+Channel 'baddies': joy
+Channel 'hall-of-w’s': neutral
+Channel 'huh': neutral
