@@ -3,9 +3,9 @@ import discord
 import asyncio
 
 
-BOT_TOKEN = 'MTEzNzExMTA4NTY0NDc5MTg5MA.G4NhT1.fd-gXAcDTUzWV5qcuVx49xINNhMkPHFoezR7dM'
+BOT_TOKEN = ''
 
-CHANNEL_ID = 1125330897302999102
+CHANNEL_ID = ""
 
 FILE_PATH = 'result.txt'
 

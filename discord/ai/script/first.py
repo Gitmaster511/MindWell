@@ -4,10 +4,10 @@ from transformers import AutoModelForSequenceClassification, pipeline
 
 
 
-BOT_TOKEN = 'MTEzNzExMTA4NTY0NDc5MTg5MA.G4NhT1.fd-gXAcDTUzWV5qcuVx49xINNhMkPHFoezR7dM'
+BOT_TOKEN = ''
 
 # The server ID for the server you want to download messages from
-SERVER_ID = 1125330897302999100  # Replace with your actual server ID
+SERVER_ID = ""  # Replace with your actual server ID
 
 # Output file name
 OUTPUT_FILE = "discord_messages.json"

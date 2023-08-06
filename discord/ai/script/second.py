@@ -4,21 +4,17 @@ from transformers import AutoModelForSequenceClassification, pipeline
 
 # Your Discord bot token (Replace 'YOUR_BOT_TOKEN' with your actual bot token)
 
-BOT_TOKEN = 'MTEzNzExMTA4NTY0NDc5MTg5MA.G4NhT1.fd-gXAcDTUzWV5qcuVx49xINNhMkPHFoezR7dM'
+BOT_TOKEN = ''
 
 # The server ID for the server you want to download messages from
-SERVER_ID = 1125330897302999100  # Replace with your actual server ID
+SERVER_ID =""
 
-# Input file name for the messages
 INPUT_MESSAGES_FILE = "discord_messages.json"
 
-# Output file name for the messages
 OUTPUT_MESSAGES_FILE = "discord_messages_with_emotion.json"
 
-# Output file name for the statistics
 OUTPUT_STATISTICS_FILE = "discord_statistics.json"
 
-# Model for emotion classification
 MODEL_NAME = 'jitesh/emotion-english'
 
 intents = discord.Intents.default()
