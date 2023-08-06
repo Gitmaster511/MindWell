@@ -8,11 +8,11 @@ import MoodTrackerPage from './MoodTrackerPage';
 import ViewMoodPage from './ViewMoodPage';
 const Stack = createStackNavigator();
 
-export default function moodtracknavigate() {
+export default function Moodtracknavigate() {
   return (
   <Stack.Navigator independant={true}>
-    <Stack.Screen name="MoodTrackerPage" component={MoodTrackerPage} />
-    <Stack.Screen name="ViewMoodPage" component={ViewMoodPage} />
+    <Stack.Screen name="Mood Tracker" component={MoodTrackerPage} />
+    <Stack.Screen name="View Mood" component={ViewMoodPage} />
 
   </Stack.Navigator>
   );

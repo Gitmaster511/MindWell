@@ -2,7 +2,7 @@ import React, { useState, useCallback, useRef } from "react";
 import { Button, View, Alert } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
 
-export default function meditate() {
+export default function Meditate() {
   const [playing, setPlaying] = useState(false);
 
   const onStateChange = useCallback((state) => {
@@ -19,9 +19,9 @@ export default function meditate() {
   return (
     <View>
       <YoutubePlayer
-        height={300}
+        height={900}
         play={true}
-        videoId={"PQ1i6sVTtik"}
+        videoId={"2OM7adQl-YQ"}
         onChangeState={onStateChange}
       />
     </View>

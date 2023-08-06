@@ -4,17 +4,18 @@ def analyze_emotion_counts(data):
     total_messages = 0
     emotions_counts = {}
 
-    # Loop through each channel
-    for channel_name, channel_data in data.items():
-        num_messages = channel_data["num_messages"]
-        total_messages += num_messages
+    # Loop through each message
+    for message in data:
+        total_messages += 1
 
-        # Loop through each emotion in the channel
-        for emotion, count in channel_data["emotion_counts"].items():
-            if emotion in emotions_counts:
-                emotions_counts[emotion] += count
-            else:
-                emotions_counts[emotion] = count
+        # Get the predicted emotion for the message
+        emotion = message["emotion"]["predicted_emotion"]
+
+        # Update the emotions count
+        if emotion in emotions_counts:
+            emotions_counts[emotion] += 1
+        else:
+            emotions_counts[emotion] = 1
 
     return total_messages, emotions_counts
 
@@ -27,40 +28,23 @@ def most_frequent_emotion(emotion_counts):
     return max(emotion_counts, key=emotion_counts.get)
 
 
-def most_frequent_emotion_per_channel(data):
-    most_frequent_per_channel = {}
-
-    # Loop through each channel
-    for channel_name, channel_data in data.items():
-        emotion_counts = channel_data["emotion_counts"]
-
-        # Find the most frequent emotion in the channel
-        most_frequent_per_channel[channel_name] = most_frequent_emotion(emotion_counts)
-
-    return most_frequent_per_channel
-
-
-def save_results_to_file(total_messages, emotions_counts, most_frequent_emotion_all_channels, most_frequent_emotion_per_channel):
+def save_results_to_file(total_messages, emotions_counts, most_frequent_emotion_all_messages):
     with open("result.txt", "w") as result_file:
         result_file.write("Total number of messages: {}\n".format(total_messages))
-        result_file.write("Emotion counts across all channels: {}\n".format(emotions_counts))
-        result_file.write("Most frequent emotion across all channels: {}\n".format(most_frequent_emotion_all_channels))
-        result_file.write("Most frequent emotion in each channel:\n")
-        for channel_name, emotion in most_frequent_emotion_per_channel.items():
-            result_file.write("Channel '{}': {}\n".format(channel_name, emotion))
+        result_file.write("Emotion counts across all messages: {}\n".format(emotions_counts))
+        result_file.write("Most frequent emotion across all messages: {}\n".format(most_frequent_emotion_all_messages))
 
 
 if __name__ == "__main__":
     # Load the JSON data from the file
-    with open("discord_statistics.json", "r") as json_file:
+    with open("discord_messages_with_emotion.json", "r") as json_file:
         data = json.load(json_file)
 
     # Perform the analysis
     total_messages, emotions_counts = analyze_emotion_counts(data)
-    most_frequent_emotion_all_channels = most_frequent_emotion(emotions_counts)
-    most_frequent_emotion_per_channel = most_frequent_emotion_per_channel(data)
+    most_frequent_emotion_all_messages = most_frequent_emotion(emotions_counts)
 
     # Save the results to the result.txt file
-    save_results_to_file(total_messages, emotions_counts, most_frequent_emotion_all_channels, most_frequent_emotion_per_channel)
+    save_results_to_file(total_messages, emotions_counts, most_frequent_emotion_all_messages)
 
     print("Results saved to result.txt")

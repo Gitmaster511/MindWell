@@ -6,14 +6,9 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Ai2 from './chat';
 import moodtracknavigate from './moodTrack/moodnavigate';
 import meditate from './meditate';
+import HomePage from './Home';
+import CapabilitiesPage from './toxic';
 
-function Feed() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Feed!</Text>
-    </View>
-  );
-}
 const Tab = createMaterialBottomTabNavigator();
 
 export default function App() {
@@ -21,14 +16,14 @@ export default function App() {
     <NavigationContainer>
 
     <Tab.Navigator
-      initialRouteName="Feed"
+      initialRouteName="HomePage"
       activeColor="#e91e63"
       labelStyle={{ fontSize: 12 }}
       style={{ backgroundColor: 'tomato' }}
     >
       <Tab.Screen
-        name="Feed"
-        component={Feed}
+        name="HomePage"
+        component={HomePage}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
@@ -47,10 +42,10 @@ export default function App() {
         }}
       />
       <Tab.Screen
-        name="MoodTrackerPage"
+        name="Mood Tracker"
         component={moodtracknavigate}
         options={{
-          tabBarLabel: 'calender',
+          tabBarLabel: 'Tracker',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="calendar-range" color={color} size={26} />
           ),
@@ -63,6 +58,16 @@ export default function App() {
           tabBarLabel: 'Meditate',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="candle" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Toxic"
+        component={CapabilitiesPage}
+        options={{
+          tabBarLabel: 'Toxic',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="radioactive" color={color} size={26} />
           ),
         }}
       />

@@ -123,7 +123,7 @@ export default function MoodTrackerPage({ navigation }) {
     <View style={{paddingHorizontal: 80}}> 
 
     </View>
-    <Button style={styles.view} icon="calendar-range" mode="contained" onPress={() => navigation.navigate('ViewMoodPage')}>
+    <Button style={styles.view} icon="calendar-range" mode="contained" onPress={() => navigation.navigate('View Mood')}>
     View old data
     </Button>
     </View>
